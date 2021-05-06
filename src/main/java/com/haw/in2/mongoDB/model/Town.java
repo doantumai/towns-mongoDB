@@ -1,9 +1,12 @@
 package com.haw.in2.mongoDB.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 
 import java.util.List;
 
+@Document(collection = "towns") //annotation helps us override the collection name by “towns”.
 public class Town {
 
     @Id
@@ -13,7 +16,6 @@ public class Town {
     public String population;
     public String lastCensus;
     public List<String> famousFor;
-    //public List<String> mayor;
     public Mayor mayor;
 
     public Town() {
@@ -27,6 +29,14 @@ public class Town {
         this.mayor = mayor;
     }
 
+    private String getFamousFor(){
+        String out = new String();
+        for (int i = 0; i < famousFor.size()-1; i++){
+            out = famousFor.get(i) + ", ";
+        }
+        return out + famousFor.get(famousFor.size()-1);
+    }
+
     /**
      * The method prints out the details of the town
      * @return Details of the town
@@ -38,7 +48,7 @@ public class Town {
                 ", name='" + name + '\'' +
                 ", population='" + population + '\'' +
                 ", lastCensus='" + lastCensus + '\'' +
-                ", famousFor=" + famousFor +
+                ", famousFor=" + getFamousFor() +
                 ", mayor= { name: " + mayor.getName() + ", party :" + mayor.getParty() +
                 '}';
     }

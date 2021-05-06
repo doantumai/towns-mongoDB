@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @SpringBootApplication
@@ -22,21 +23,21 @@ public class MongoDbApplication implements CommandLineRunner {
 		System.out.println("Moin");
 	}
 
-	//@Override
 	public void run(String... args) throws Exception{
 		townRepository.deleteAll();
 
-		List<String> famousFor = new ArrayList<>();
-		famousFor.add("the MOMA");
-		famousFor.add("food");
-		famousFor.add("Derek Jeter");
+//		List<String> famousFor = new ArrayList<>();
+//		famousFor.add("");
+//		famousFor.add("");
+//		famousFor.add("");
 
-//		List<String> mayor = new ArrayList<>();
-//		mayor.add("Bill de Blasio");
-//		mayor.add("D");
 
 		// save towns
-		townRepository.save(new Town("New York", "22200000", "ISODate("+"2016-07-01"+")", famousFor, new Mayor("Bill de Blasio", "D")));
+		townRepository.save(new Town("Washinton D.C", "7.615.000", "ISODate("+"2019-01-01"+")", Collections.singletonList("White House"), new Mayor("Muriel Bowser", "D")));
+		townRepository.save(new Town("New York", "22.200.000", "ISODate("+"2016-07-01"+")", Collections.singletonList("the MOMA, food, Derek Jeter"), new Mayor("Bill de Blasio", "D")));
+		townRepository.save(new Town("Los Angeles", "3.967.000", "ISODate("+"2019-01-01"+")", Collections.singletonList("Hollywood Sign, the Getty Center"), new Mayor("Eric Garcetti", "D")));townRepository.save(new Town("Los Angeles", "3.967.000", "ISODate("+"2019-01-01"+")", Collections.singletonList("Hollywood Sign, the Getty Center"), new Mayor("Eric Garcetti", "D")));
+		townRepository.save(new Town("Long Island", "7.647.000", "ISODate("+"2019-01-01"+")", Collections.singletonList("Gold Coast Mansions"), new Mayor("Laura Curran", "D")));
+		townRepository.save(new Town("Miami", "454.279", "ISODate("+"2019-01-01"+")", Collections.singletonList("Gorgeous Beaches"), new Mayor("Francis X. Suarez", "R")));
 
 		System.out.println("Towns found with findAll():");
 		System.out.println("-------------------------------");
@@ -50,9 +51,9 @@ public class MongoDbApplication implements CommandLineRunner {
 		System.out.println("--------------------------------");
 		System.out.println(townRepository.findByName("New York"));
 
-		//TODO
+
 		System.out.println("Town found with findByName('famousFor'):");
 		System.out.println("--------------------------------");
-
+		System.out.println(townRepository.findByFamousFor("food"));
 	}
 }
