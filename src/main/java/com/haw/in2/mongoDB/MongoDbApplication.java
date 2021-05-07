@@ -8,9 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 @SpringBootApplication
 public class MongoDbApplication implements CommandLineRunner {
@@ -20,17 +18,10 @@ public class MongoDbApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MongoDbApplication.class, args);
-		System.out.println("Moin");
 	}
 
-	public void run(String... args) throws Exception{
+	public void run(String... args){
 		townRepository.deleteAll();
-
-//		List<String> famousFor = new ArrayList<>();
-//		famousFor.add("");
-//		famousFor.add("");
-//		famousFor.add("");
-
 
 		// save towns
 		townRepository.save(new Town("Washinton D.C", "7.615.000", "ISODate("+"2019-01-01"+")", Collections.singletonList("White House"), new Mayor("Muriel Bowser", "D")));
@@ -50,10 +41,16 @@ public class MongoDbApplication implements CommandLineRunner {
 		System.out.println("Town found with findByName('New York'):");
 		System.out.println("--------------------------------");
 		System.out.println(townRepository.findByName("New York"));
+		System.out.println("Town found with findByName('Miami'):");
+		System.out.println("--------------------------------");
+		System.out.println(townRepository.findByName("Miami"));
 
 
 		System.out.println("Town found with findByName('famousFor'):");
 		System.out.println("--------------------------------");
 		System.out.println(townRepository.findByFamousFor("food"));
+		System.out.println("Town found with findByName('famousFor'):");
+		System.out.println("--------------------------------");
+		System.out.println(townRepository.findByFamousFor("White House"));
 	}
 }

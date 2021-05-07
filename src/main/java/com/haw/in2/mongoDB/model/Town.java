@@ -29,6 +29,10 @@ public class Town {
         this.mayor = mayor;
     }
 
+    /**
+     * Hilfsmethode
+     * @return Eintraege als concat-String
+     */
     private String getFamousFor(){
         String out = new String();
         for (int i = 0; i < famousFor.size()-1; i++){
