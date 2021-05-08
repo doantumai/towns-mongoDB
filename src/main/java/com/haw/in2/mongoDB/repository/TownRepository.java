@@ -10,15 +10,12 @@ import java.util.Optional;
 
 @RepositoryRestResource(collectionResourceRel = "towns", path = "towns")
 public interface TownRepository extends MongoRepository<Town, String> {
-
-    List<Town> findByName(String name);
-
     Optional<Town> findByFamousFor(String famousFor);
 
     @Query(value ="{ famousFor : 'food' }", fields = "{ id : 0, name : 1, famousFor : 1, mayor : 1}")
     List<Town> findByFamousForFood();
 
-    @Query(value ="{ famousFor : '/MOMA/' }", fields = "{ id : 0, name : 1, famousFor : 1 , mayor : 1}")
+    @Query(value ="{ famousFor : {$regex: /MOMA/} }", fields = "{ id : 0, name : 1, famousFor : 1 , mayor : 1}")
     List<Town> findByFamousForMoma();
 
     @Query(value ="{ famousFor : { $all : ['food', 'beer'] } }", fields = "{ id : 0, name : 1, famousFor : 1}")
