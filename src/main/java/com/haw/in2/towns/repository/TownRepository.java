@@ -12,6 +12,8 @@ import java.util.Optional;
 public interface TownRepository extends MongoRepository<Town, String> {
     Optional<Town> findByFamousFor(String famousFor);
 
+    List<Town> findByMayorParty(String mayorParty);
+
     @Query(value ="{ famousFor : 'food' }", fields = "{ id : 0, name : 1, famousFor : 1, mayor : 1}")
     List<Town> findByFamousForFood();
 

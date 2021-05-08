@@ -23,7 +23,7 @@ public class TownsApplication implements CommandLineRunner {
 
 		// save towns
 		townRepository.save(new Town("1", "Washinton D.C", "7.615.000", "ISODate(" + "2019-01-01" + ")", new String[]{"White House"}, new Mayor("Muriel Bowser", "D")));
-		townRepository.save(new Town("2", "New York", "22.200.000", "ISODate(" + "2016-07-01" + ")", new String[]{"the MOMA, ", "food, ", "Derek Jeter"}, new Mayor("Bill de Blasio", "D")));
+		townRepository.save(new Town("2", "New York", "22.200.000", "ISODate(" + "2016-07-01" + ")", new String[]{"the MOMA", ", ", "food", ", ", "Derek Jeter"}, new Mayor("Bill de Blasio", "D")));
 		townRepository.save(new Town("3", "Los Angeles", "3.967.000", "ISODate(" + "2019-01-01" + ")", new String[]{"Hollywood Sign, ", "the Getty Center"}, new Mayor("Eric Garcetti", "D")));
 		townRepository.save(new Town("4", "Long Island", "7.647.000", "ISODate(" + "2019-01-01" + ")", new String[]{"Gold Coast Mansions"}, new Mayor("Laura Curran", "D")));
 		townRepository.save(new Town("5", "Miami", "454.279", "ISODate(" + "2019-01-01" + ")", new String[]{"Gorgeous Beaches"}, new Mayor("Francis X. Suarez", "R")));
