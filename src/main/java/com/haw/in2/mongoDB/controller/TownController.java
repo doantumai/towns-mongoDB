@@ -22,4 +22,27 @@ public class TownController {
     public List<Town> getTowns(){
         return this.townRepository.findAll();
     }
+
+    @GetMapping("famousforfood")
+    public List<Town> getFamousForFood(){
+        return this.townRepository.findByFamousForFood();
+    }
+
+    @GetMapping("famousformoma")
+    public List<Town> getFamousForMoma(){
+        return this.townRepository.findByFamousForMoma();
+    }
+
+    @GetMapping("famousforfoodandbeer")
+    public List<Town> getFamousForFoodAndBeer(){ return this.townRepository.findByFamousForFoodAndBeer();}
+
+    @GetMapping("famousfornotfoodandbeer")
+    public List<Town> getByFamousForNotConsistingFoodAndBeer(){
+        return this.townRepository.findByFamousForNotConsistingFoodAndBeer();
+    }
+
+    @GetMapping("mayorparty")
+    public List<Town> getByMayorParty(){
+        return this.townRepository.findByMayorParty();
+    }
 }
