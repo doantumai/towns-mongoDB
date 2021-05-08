@@ -1,7 +1,7 @@
-package com.haw.in2.mongoDB.controller;
+package com.haw.in2.towns.controller;
 
-import com.haw.in2.mongoDB.model.Town;
-import com.haw.in2.mongoDB.repository.TownRepository;
+import com.haw.in2.towns.model.Town;
+import com.haw.in2.towns.repository.TownRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

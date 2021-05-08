@@ -1,21 +1,21 @@
-package com.haw.in2.mongoDB;
+package com.haw.in2.towns;
 
-import com.haw.in2.mongoDB.model.Mayor;
-import com.haw.in2.mongoDB.model.Town;
-import com.haw.in2.mongoDB.repository.TownRepository;
+import com.haw.in2.towns.model.Mayor;
+import com.haw.in2.towns.model.Town;
+import com.haw.in2.towns.repository.TownRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MongoDbApplication implements CommandLineRunner {
+public class TownsApplication implements CommandLineRunner {
 
 	@Autowired
 	public TownRepository townRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(MongoDbApplication.class, args);
+		SpringApplication.run(TownsApplication.class, args);
 	}
 
 	public void run(String... args) {

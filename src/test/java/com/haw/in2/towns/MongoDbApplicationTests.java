@@ -1,4 +1,4 @@
-package com.haw.in2.mongoDB;
+package com.haw.in2.towns;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

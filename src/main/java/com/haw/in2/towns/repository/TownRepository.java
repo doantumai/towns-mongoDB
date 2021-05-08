@@ -1,6 +1,6 @@
-package com.haw.in2.mongoDB.repository;
+package com.haw.in2.towns.repository;
 
-import com.haw.in2.mongoDB.model.Town;
+import com.haw.in2.towns.model.Town;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

@@ -1,4 +1,4 @@
-package com.haw.in2.mongoDB.model;
+package com.haw.in2.towns.model;
 
 import lombok.AllArgsConstructor;
 import org.springframework.data.annotation.Id;

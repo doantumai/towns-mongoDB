@@ -1,4 +1,4 @@
-package com.haw.in2.mongoDB.model;
+package com.haw.in2.towns.model;
 
 public class Mayor {
 

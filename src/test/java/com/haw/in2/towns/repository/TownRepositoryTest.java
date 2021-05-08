@@ -1,7 +1,7 @@
-package com.haw.in2.mongoDB.repository;
+package com.haw.in2.towns.repository;
 
-import com.haw.in2.mongoDB.MongoDbApplication;
-import com.haw.in2.mongoDB.model.Town;
+import com.haw.in2.towns.TownsApplication;
+import com.haw.in2.towns.model.Town;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = MongoDbApplication.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@SpringBootTest(classes = TownsApplication.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @ExtendWith(SpringExtension.class)
 class TownRepositoryTest {
 
